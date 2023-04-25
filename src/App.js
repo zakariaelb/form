@@ -62,18 +62,21 @@ export default function Form() {
                 placeholder="First Name"
                 onChange={handledChange}
                 name="firstName"
+                value={FormData.firstName}
             />
             <input
                 type="text"
                 placeholder="Last Name"
                 onChange={handledChange}
                 name="lastName"
+                value={FormData.lastName}
             />
             <input
                 type="text"
                 placeholder="E-mail"
                 onChange={handledChange}
                 name="email"
+                value={FormData.email}
             />
         </form>
     )
