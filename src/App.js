@@ -38,22 +38,38 @@ import React from "react"
 
 export default function Form() {
     const [fromData, setFormData] = React.useState(
-      {firstName: "", lastName: "", email: "", comments: ""}
+      {firstName: "",
+        lastName: "",
+        email: "",
+        comments: "",
+        isFriendly: true
+      }
       )
     /**
      * Challenge: Track the applicant's last name as well
      */
     
     console.log(fromData)
+    // function handledChange(event) {
+    //     //console.log(event.target.name)
+    //     setFormData(prevFormData => {
+    //       return {
+    //         ...prevFormData,
+    //         [event.target.name]: event.target.value
+    //       }
+    //     })
+    // }
+
     function handledChange(event) {
-        //console.log(event.target.name)
-        setFormData(prevFormData => {
-          return {
-            ...prevFormData,
-            [event.target.name]: event.target.value
-          }
-        })
-    }
+      //console.log(event.target.name)
+      const {name, value, type, checked} = event.target
+      setFormData(prevFormData => {
+        return {
+          ...prevFormData,
+          [name]: type === "checkbox" ? checked : value
+        }
+      })
+  }
         
     return (
         <form>
@@ -84,6 +100,15 @@ export default function Form() {
               name="comments"
               value={fromData.comments}
             />
+            <input 
+              type="checkbox"
+              id="isFriendly"
+              checked={fromData.isFriendly}
+              onChange={handledChange}
+              name="isFriendly"
+            />
+            <label htmlFor="isFriendly">Are you friendly?</label>
+            <br />
         </form>
     )
 }
