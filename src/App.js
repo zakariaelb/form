@@ -38,7 +38,7 @@ import React from "react"
 
 export default function Form() {
     const [fromData, setFormData] = React.useState(
-      {firstName: "", lastName: "", email: ""}
+      {firstName: "", lastName: "", email: "", comments: ""}
       )
     /**
      * Challenge: Track the applicant's last name as well
@@ -62,21 +62,27 @@ export default function Form() {
                 placeholder="First Name"
                 onChange={handledChange}
                 name="firstName"
-                value={FormData.firstName}
+                value={fromData.firstName}
             />
             <input
                 type="text"
                 placeholder="Last Name"
                 onChange={handledChange}
                 name="lastName"
-                value={FormData.lastName}
+                value={fromData.lastName}
             />
             <input
                 type="text"
                 placeholder="E-mail"
                 onChange={handledChange}
                 name="email"
-                value={FormData.email}
+                value={fromData.email}
+            />
+            <textarea 
+              placeholder="Comments"
+              onChange={handledChange}
+              name="comments"
+              value={fromData.comments}
             />
         </form>
     )
