@@ -42,13 +42,14 @@ export default function Form() {
         lastName: "",
         email: "",
         comments: "",
-        isFriendly: true
+        isFriendly: true,
+        employment: ""
       }
       )
     /**
      * Challenge: Track the applicant's last name as well
      */
-    
+    console.log(fromData.employment)
     console.log(fromData)
     // function handledChange(event) {
     //     //console.log(event.target.name)
@@ -118,6 +119,10 @@ export default function Form() {
                 <input 
                     type="radio"
                     id="unemployed"
+                    name="employment"
+                    value="unemployed"
+                    checked={fromData.employment === "unemployed"}
+                    onChange={handledChange}
                 />
                 <label htmlFor="unemployed">Unemployed</label>
                 <br />
@@ -125,6 +130,10 @@ export default function Form() {
                 <input 
                     type="radio"
                     id="part-time"
+                    name="employment"                  
+                    value="part-time"
+                    checked={fromData.employment === "part-time"}
+                    onChange={handledChange}
                 />
                 <label htmlFor="part-time">Part-time</label>
                 <br />
@@ -132,6 +141,10 @@ export default function Form() {
                 <input 
                     type="radio"
                     id="full-time"
+                    name="employment"                    
+                    value="full-time"
+                    checked={fromData.employment === "full-time"}
+                    onChange={handledChange}
                 />
                 <label htmlFor="full-time">Full-time</label>
                 <br />
