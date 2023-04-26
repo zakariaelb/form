@@ -43,7 +43,8 @@ export default function Form() {
         email: "",
         comments: "",
         isFriendly: true,
-        employment: ""
+        employment: "",
+        favColor:""
       }
       )
     /**
@@ -51,6 +52,7 @@ export default function Form() {
      */
     console.log(fromData.employment)
     console.log(fromData)
+    console.log(fromData.favColor)
     // function handledChange(event) {
     //     //console.log(event.target.name)
     //     setFormData(prevFormData => {
@@ -150,6 +152,25 @@ export default function Form() {
                 <br />
                 
             </fieldset>
+            <br />
+            
+            <label htmlFor="favColor">What is your favorite color?</label>
+            <br />
+            <select
+               id="favColor"
+               value={FormData.favColor}
+               name="favColor"
+               onChange={handledChange}
+            >
+                <option value="">-- Choose --</option>
+                <option value="red">Red</option>
+                <option value="orange">Orange</option>
+                <option value="yellow">Yellow</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+                <option value="indigo">Indigo</option>
+                <option value="violet">Violet</option>
+            </select>
         </form>
     )
 }
