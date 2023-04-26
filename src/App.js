@@ -73,9 +73,17 @@ export default function Form() {
         }
       })
   }
+    function handleSubmit(event){
+      event.preventDefault()
+      //if i remove event.preventDefault() i got
+      //http://localhost:3000/?firstName=Zakaria&lastName=EL+BATMI&email=zakaria.el-batmi%40outlook.com&comments=ss&isFriendly=on&employment=full-time&favColor=red
+
+      //submitTOApi(formData)
+      console.log(fromData)
+    }
         
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <input
                 type="text"
                 placeholder="First Name"
@@ -171,6 +179,9 @@ export default function Form() {
                 <option value="indigo">Indigo</option>
                 <option value="violet">Violet</option>
             </select>
+            <br />
+            <br />
+            <button>Submit</button>
         </form>
     )
 }
